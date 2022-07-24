@@ -1,5 +1,7 @@
 package com.example.sample2.dto;
 
+import com.example.sample2.entity.Article;
+
 public class ArticleForm {
   private String title;
   private String content;
@@ -9,6 +11,9 @@ public class ArticleForm {
     this.content = content;
   }
 
+  public Article toEntity() {
+    return new Article(null, title, content);
+  }
 
   public String getTitle() {
     return this.title;
