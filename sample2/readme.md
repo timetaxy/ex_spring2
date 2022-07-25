@@ -63,3 +63,16 @@ null 일 수 있는 건 ex) select 결과
 			또는 number1.orElse(0)
 
 mustache에서 모델 data 변수는 {{#변수명}}
+
+failed to execute sql script statement 에러 발생 시
+../resources/application.properties
+콘솔 설정
+  spring.h2.console.enabled=true
+기동시 data.sql 실행
+  spring.jpa.defer-datasource-initialization=true
+
+인텔리제이 한글 깨짐
+ 메뉴바 > Help > VM 옵션 수정
+다음 설정을 끝부분에 추가
+-Dfile.encoding=UTF-8
+
