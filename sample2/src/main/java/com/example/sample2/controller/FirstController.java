@@ -14,4 +14,9 @@ public class FirstController {
     model.addAttribute("username", "metaxy");
     return "greetings";// mustache file name
   }
+
+  @GetMapping("/api/hello")
+  public String hello() {
+    return "hello world!";
+  }
 }

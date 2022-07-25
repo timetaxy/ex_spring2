@@ -76,3 +76,24 @@ failed to execute sql script statement 에러 발생 시
 다음 설정을 끝부분에 추가
 -Dfile.encoding=UTF-8
 
+api test
+	jsonplaceholder.typicode.com
+	talend api tester
+
+@RestController : json 리턴
+
+@RequestBody
+	post 에서 요청 값 가져올 때
+
+ResponseEntity<Article>
+	상태코드 보낼 수 있음
+
+ResponseEntity.status(HttpStatus.OK).build();
+	body 없을 때
+
+
+
+
+dto > object : mapper
+https://www.baeldung.com/entity-to-and-from-dto-for-a-java-spring-application
+

@@ -34,6 +34,13 @@ public class Article {
     return new Article(null, title, content);
   }
 
+  public void patch(Article article) {
+    if (article.title != null)
+      this.title = article.title;
+    if (article.content != null)
+      this.content = article.content;
+  }
+
   // @Override
   // public String toString() {
   // return "Article{" + "id=" + id + ", title='" + title + '\'' + ", content='" + content + '\''
