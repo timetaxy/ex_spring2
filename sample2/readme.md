@@ -110,6 +110,10 @@ extends JpaRepository<대상, Long>
 
 @Autowired에서 자동으로 만들려면 대상이 @Component : ioc컨테이너에 등록 이어야 함.
 
+테스트
+자료 수정 생성 테스트는 transactional 처리
+@Test
+  @Transactional
 
 @Aspect aop클래스 부가기능 클래스
 	@Component 같이 필요
