@@ -91,9 +91,51 @@ ResponseEntity<Article>
 ResponseEntity.status(HttpStatus.OK).build();
 	body 없을 때
 
+stream 문법에서
+Collectors.toList() 는
+	~List.add(aaa)
+
+@ManyToOne
+	현재클래스 many : 본 변수 one
+
+@JoinColumn(name="연결 대상 컬럼")
+
+extends JpaRepository<대상, Long>
+	paging and sorting
+
+쿼리 방법
+	@Query
+	META-INF > orm.xml
+	빌드패턴?
+
+@Autowired에서 자동으로 만들려면 대상이 @Component : ioc컨테이너에 등록 이어야 함.
 
 
+@Aspect aop클래스 부가기능 클래스
+	@Component 같이 필요
+
+@Pointcut 대상 메소드
+@Before, @After
+@AfterReturning 대상실햏 후, 정상 수행시
+@AfterThrowing 대상실행 후, 예외 시
+@Around 대상 실행 전후
+
+ObjectMapper
+Json <> DTO
+
+String json = objectMapper.writeValueAsString(aaa)
+Aaa aaa = objectMapper.readValue(json, aaa.class)
+
+ObjectNode objectNode = objectMapper.createObjectNode();
+objectNode.put("name","nameValue");
+
+ArrayNode arrayNode = objectMapper.createArrayNode();
+arrayNode.add("value");
+objectNode.set("value",arrayNode);
+
+String json = objectNode.toString();
 
 dto > object : mapper
 https://www.baeldung.com/entity-to-and-from-dto-for-a-java-spring-application
 
+Spring security, jpa
