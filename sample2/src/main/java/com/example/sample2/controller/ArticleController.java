@@ -1,8 +1,10 @@
 package com.example.sample2.controller;
 
 import com.example.sample2.dto.ArticleForm;
+import com.example.sample2.dto.CommentDto;
 import com.example.sample2.entity.Article;
 import com.example.sample2.repository.ArticleRepository;
+import com.example.sample2.service.CommentService;
 import lombok.extern.slf4j.Slf4j;
 import java.util.List;
 import java.util.Optional;
@@ -19,6 +21,9 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 public class ArticleController {
   @Autowired
   private ArticleRepository articleRepository;
+
+  @Autowired
+  private CommentService commentService;
 
   @GetMapping("/articles/new")
   public String newArticleForm() {
@@ -41,9 +46,12 @@ public class ArticleController {
   @GetMapping("/articles/{id}")
   public String show(@PathVariable Long id, Model model) {
     log.info("id = " + id);
-    Optional<Article> articleEntity = articleRepository.findById(id);
+    // Optional<Article> articleEntity = articleRepository.findById(id);
     // Article articleEntity = articleRepository.findById(id).orElse(null);
-    model.addAttribute("article", articleEntity);
+
+    Article articleEntity = articleRepository.findById(id).orElse(null);
+    List<CommentDto> commentsDtos = commentService.comments(id);
+    model.addAttribute("commentDtos", commentsDtos);
     return "articles/show";
   }
 
