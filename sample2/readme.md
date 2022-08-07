@@ -142,6 +142,6 @@ String json = objectNode.toString();
 dto > object : mapper
 https://www.baeldung.com/entity-to-and-from-dto-for-a-java-spring-application
 
-후속 공부 Spring security, jpa
+완료
 
-https://cloudstudying.kr/lectures/486 차례
+후속 공부 Spring security, jpa
